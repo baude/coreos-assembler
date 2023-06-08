@@ -789,7 +789,7 @@ EOF
     "ppc64le") memory_default=4096 ;;
     esac
 
-    kola_args=(kola qemuexec -m "${COSA_SUPERMIN_MEMORY:-${memory_default}}" --auto-cpus -U --workdir none \
+    kola_args=(kola qemuexec -m "${COSA_SUPERMIN_MEMORY:-${memory_default}}" -U --workdir none \
                --console-to-file "${runvm_console}")
 
     base_qemu_args=(-drive 'if=none,id=root,format=raw,snapshot=on,file='"${vmbuilddir}"'/root,index=1' \
